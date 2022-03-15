@@ -13,3 +13,8 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# python
+.venv/
+.venv
+__pycache__/
