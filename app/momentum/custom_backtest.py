@@ -42,7 +42,7 @@ for ticker in tickers:
     if len(df) > 100:  # data must be long enough to compute 100 day SMA
         df = prepareData(df,'2020-02-16', '2022-02-18')
 
-        cerebro.adddata(bt.feeds.PandasData(dataname=df, plot=False))
+        cerebro.adddata(bt.feeds.PandasData(dataname=df, plot=False), name=ticker)
 
 
 #set up
@@ -60,7 +60,6 @@ results = cerebro.run()
 
 
 cerebro.plot(iplot=False)[0][0]
-cerebro.plot(spy)
 print(
     f"Sharpe: {results[0].analyzers.sharperatio.get_analysis()['sharperatio']:.3f}")
 print(
